@@ -19,7 +19,7 @@ namespace Akka.Logger.slf4net
     /// recognized: <see cref="Debug"/>, <see cref="Info"/>,
     /// <see cref="Warning"/> and <see cref="Error"/>.
     /// </summary>
-    public class Slf4NetLogger : UntypedActor
+    public class Slf4NetLogger : UntypedActor, IRequiresMessageQueue<ILoggerMessageQueueSemantics>
     {
         private readonly ILoggingAdapter _log = Context.GetLogger();
 
